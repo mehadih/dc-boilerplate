@@ -1,7 +1,7 @@
 import {Suspense, unstable_ViewTransition as ViewTransition} from 'react';
 import NotFound from "@/app/not-found";
 import LoadingSpinner from "@/components/LoadingSpinner";
-import reactHtmlParser from "react-html-parser";
+import parse from "html-react-parser";
 import {getPageData, PageData, PageSection} from "@/utils/api";
 import FormContact from "@/components/FormContact";
 import {generatePageSEO} from "@/utils/seoConfig";
@@ -39,8 +39,8 @@ export async function generateMetadata() {
     const meta = pageData?.page_data;
 
     // Parse HTML content if needed
-    const parsedTitle = reactHtmlParser(meta.title);
-    const parsedSubtitle = reactHtmlParser(meta.subtitle);
+    const parsedTitle = parse(meta.title);
+    const parsedSubtitle = parse(meta.subtitle);
 
     // Use the SEO config function
     return generatePageSEO({

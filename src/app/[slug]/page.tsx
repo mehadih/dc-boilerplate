@@ -1,7 +1,7 @@
 import {Suspense, unstable_ViewTransition as ViewTransition} from 'react';
 import NotFound from "@/app/not-found";
 import LoadingSpinner from "@/components/LoadingSpinner";
-import reactHtmlParser from 'react-html-parser';
+import parse from 'html-react-parser';
 import CardsSection from "@/components/client/CardsSection";
 import {getPageData, PageSection} from "@/utils/api";
 import { generatePageSEO } from "@/utils/seoConfig";
@@ -48,8 +48,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     const meta = pageData?.page_data;
 
     // Parse HTML content if needed
-    const parsedTitle = reactHtmlParser(meta.meta_title);
-    const parsedSubtitle = reactHtmlParser(meta.meta_description);
+    const parsedTitle = parse(meta.meta_title);
+    const parsedSubtitle = parse(meta.meta_description);
 
     // Use the SEO config function
     return generatePageSEO({

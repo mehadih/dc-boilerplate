@@ -1,7 +1,7 @@
 'use client'
 import React from 'react';
 import Link from "next/link";
-import reactHtmlParser from "react-html-parser";
+import parse from "html-react-parser";
 import Img from "@/components/ui/Img";
 
 // TypeScript interfaces
@@ -65,7 +65,7 @@ const MyComponent: React.FC<MyComponentProps> = ({ item }) => {
                                     key={index}
                                     className="px-5 py-2.5 text-sm w-fit h-6 rounded-lg text-black bg-white flex justify-center items-center mr-1.5 last:mr-0"
                                 >
-                  {reactHtmlParser(element?.title)}
+                  {parse(element?.title)}
                 </span>
                             );
                         })
@@ -104,7 +104,7 @@ const MyComponent: React.FC<MyComponentProps> = ({ item }) => {
                                 key={index}
                                 className="text-black text-base mb-4 last:mb-0"
                             >
-                                Text {index + 1}: {reactHtmlParser(element?.title)}
+                                Text {index + 1}: {parse(element?.title)}
                             </p>
                         );
                     })
