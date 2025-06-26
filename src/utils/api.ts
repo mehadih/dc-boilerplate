@@ -122,7 +122,7 @@ export async function getSettingsData(slug?: string): Promise<SettingsData | nul
 
   if (slug) {
     // If slug is provided, fetch the specific page data using the slug
-    url = `${process.env.NEXT_PUBLIC_BASE_URL || 'public'}/json/${slug}.json`;
+    url = `${process.env.NEXT_PUBLIC_BASE_URL || ''}/json/${slug}.json`;
   }
   try {
     const res = await fetch(url, {
@@ -143,7 +143,7 @@ export async function getMenuData(slug?: string): Promise<MenuData | null> {
 
   if (slug) {
     // If slug is provided, fetch the specific page data using the slug
-    url = `${process.env.NEXT_PUBLIC_BASE_URL || 'public'}/json/${slug}.json`;
+    url = `${process.env.NEXT_PUBLIC_BASE_URL || ''}/json/${slug}.json`;
   }
   try {
     const res = await fetch(url, {
@@ -156,4 +156,4 @@ export async function getMenuData(slug?: string): Promise<MenuData | null> {
     console.error(`Error fetching ${slug ? `${slug}.json` : ''}:`, error);
     return null;
   }
-} 
+}
