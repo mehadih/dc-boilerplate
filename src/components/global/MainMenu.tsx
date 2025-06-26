@@ -168,7 +168,7 @@ const MainMenu: React.FC<MainMenuProps> = ({ }) => {
         const isSubmenuOpen = openMobileSubmenus.includes(item.id);
 
         return (
-            <div key={item.id} className={`mobile-menu-item ${depth > 0 ? 'ml-6' : ''}`}>
+            <div key={`${item.id}-${item.item_url}`} className={`mobile-menu-item ${depth > 0 ? 'ml-6' : ''}`}>
                 <div className="flex items-center justify-between py-4 border-b border-gray-100 last:border-b-0">
                     <button
                         className="flex items-center gap-4 flex-1 text-left"
@@ -243,7 +243,7 @@ const MainMenu: React.FC<MainMenuProps> = ({ }) => {
 
                                 return (
                                     <div
-                                        key={item.id}
+                                        key={`${item.id}-${item.item_url}-depth-${depth}`}
                                         className="relative"
                                         onMouseEnter={() => {
                                             if (depth === 3) handleDeepMenuEnter(item.id);
@@ -349,7 +349,7 @@ const MainMenu: React.FC<MainMenuProps> = ({ }) => {
                             <ul className="flex items-center gap-8">
                                 {currentMenuData.map((item) => (
                                     <li
-                                        key={item.id}
+                                        key={`${item.id}-${item.item_url}`}
                                         className="relative group"
                                         onMouseEnter={() => handleMenuEnter(item.id)}
                                         onMouseLeave={handleMenuLeave}
@@ -386,7 +386,7 @@ const MainMenu: React.FC<MainMenuProps> = ({ }) => {
                                                         <div className="space-y-1">
                                                             {item.items.map((subItem) => (
                                                                 <div
-                                                                    key={subItem.id}
+                                                                    key={`${subItem.id}-${subItem.item_url}-level2`}
                                                                     className="relative"
                                                                     onMouseEnter={() => handleSubMenuEnter(subItem.id)}
                                                                     onMouseLeave={handleSubMenuLeave}

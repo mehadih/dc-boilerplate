@@ -10,6 +10,7 @@ import CheckBox from "@/components/ui/field/CheckBox";
 import RadioButton from "@/components/ui/field/RadioButton";
 import { FieldError } from 'react-hook-form';
 import Title from "@/components/ui/Title";
+import { cn } from "@/lib/utils";
 
 interface FormData {
     [key: string]: unknown;
@@ -132,7 +133,11 @@ const FormContact: React.FC<FormContactProps> = ({
         <section className={'bg-[#f5f5f5] pb-[120px] pt-[120px]'}>
             <div className={'container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'}>
                 <div
-                    className={`relative ${asModal ? 'modal' : ''} ${padding || ''}`}
+                    className={cn(
+                        'relative',
+                        asModal ? 'modal' : '',
+                        padding || ''
+                    )}
                     id={id || 'FormContact'}
                 >
                     <Title tag='h2' margin={'0 0 60px'} fontFamily='var(--var-dc--font-mono)'

@@ -11,21 +11,22 @@ interface ClientLayoutProps {
 
 export default function ClientLayout({ children }: ClientLayoutProps): JSX.Element {
 
+// Service Worker registration - disabled for StackBlitz compatibility
 // Typically added in a top-level client component like _app.tsx or a custom layout
-useEffect(() => {
-  if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-      navigator.serviceWorker
-        .register('/sw.js')
-        .then((registration) => {
-          console.log('ServiceWorker registered: ', registration);
-        })
-        .catch((error) => {
-          console.error('ServiceWorker registration failed: ', error);
-        });
-    });
-  }
-}, []);
+// useEffect(() => {
+//   if ('serviceWorker' in navigator) {
+//     window.addEventListener('load', () => {
+//       navigator.serviceWorker
+//         .register('/sw.js')
+//         .then((registration) => {
+//           console.log('ServiceWorker registered: ', registration);
+//         })
+//         .catch((error) => {
+//           console.error('ServiceWorker registration failed: ', error);
+//         });
+//     });
+//   }
+// }, []);
 
   return (
     <>

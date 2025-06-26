@@ -176,7 +176,7 @@
                 ]
             },
             {
-                "id": 139,
+                "id": 200,
                 "menu_id": 2,
                 "parent_id": 0,
                 "item_title": "News & Events",
@@ -185,11 +185,11 @@
                 "item_url": "/news-events",
                 "item_target": "_self",
                 "item_icon": "",
-                "sort_order": 2,
+                "sort_order": 4,
                 "items": []
             },
             {
-                "id": 139,
+                "id": 201,
                 "menu_id": 2,
                 "parent_id": 0,
                 "item_title": "Career",
@@ -198,11 +198,11 @@
                 "item_url": "/career",
                 "item_target": "_self",
                 "item_icon": "",
-                "sort_order": 2,
+                "sort_order": 5,
                 "items": []
             },
             {
-                "id": 139,
+                "id": 202,
                 "menu_id": 2,
                 "parent_id": 0,
                 "item_title": "Contact Us",
@@ -211,7 +211,7 @@
                 "item_url": "/contacts",
                 "item_target": "_self",
                 "item_icon": "",
-                "sort_order": 2,
+                "sort_order": 6,
                 "items": []
             }
         ],

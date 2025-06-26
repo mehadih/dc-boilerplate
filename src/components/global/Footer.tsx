@@ -430,12 +430,12 @@ const Footer: React.FC<FooterProps> = ({data}) => {
                                 </p>
                             )}
                             {siteCredit && (
-                                <p className="text-sm text-gray-500 hover:text-gray-400 transition-colors duration-300 group cursor-pointer">
+                                <div className="text-sm text-gray-500 hover:text-gray-400 transition-colors duration-300 group cursor-pointer">
                                     <span className="relative">
                                         {siteCredit}
                                         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded" />
                                     </span>
-                                </p>
+                                </div>
                             )}
                         </div>
                     </div>
